@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client.c                                           :+:      :+:    :+:   */
+/*   client_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rhmimchi <rhmimchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/09 16:42:07 by rhmimchi          #+#    #+#             */
-/*   Updated: 2024/01/13 22:45:45 by rhmimchi         ###   ########.fr       */
+/*   Created: 2024/01/13 22:07:52 by rhmimchi          #+#    #+#             */
+/*   Updated: 2024/01/14 22:37:55 by rhmimchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,12 @@ int	checkdigit(char *av)
 	return (0);
 }
 
+void	done(int sig)
+{
+	if (sig == SIGUSR1)
+		write(1, "Done !\n", 8);
+}
+
 int	main(int argc, char **argv)
 {
 	int	pid;
@@ -88,6 +94,7 @@ int	main(int argc, char **argv)
 		write(2, "Wrong PID!\n", 11);
 		return (0);
 	}
+	signal(SIGUSR1, done);
 	ft_send_str(pid, argv[2]);
 	return (0);
 }
