@@ -1,6 +1,6 @@
 # Minitalk
 Minitalk project for 1337 school
-![](https://cdn.discordapp.com/attachments/1067452256686981161/1195006459709239306/Screen_Shot_2024-01-11_at_3.05.55_PM.png?ex=65b26b7e&is=659ff67e&hm=450388adee1841076f7e0fa50683858f470b0d5a84a9c9a37ed9220d2dcf6533&)
+![](https://cdn.discordapp.xyz/attachments/1067452256686981161/1195006459709239306/Screen_Shot_2024-01-11_at_3.05.55_PM.png)
 
 Minitalk is a simple communication program that demonstrates interprocess communication (IPC) using signals in the Unix/Linux environment. It consists of two separate programs: a client and a server. The client and server communicate by sending signals to each other.
 
